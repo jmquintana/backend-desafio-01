@@ -25,7 +25,8 @@ class ProductManager {
 		if (productIndex === -1) {
 			return this.products.push(product);
 		} else {
-			return "Producto duplicado";
+			console.error("Duplicate product: not added to the list.");
+			return "Duplicate product";
 		}
 	};
 
@@ -69,7 +70,7 @@ kiosko.addProduct(
 console.log("TEST 02 - Get Products (1 producto):", kiosko.getProducts());
 
 console.log(
-	"TEST 03 - Get Products:",
+	"TEST 03 - Add Duplicate Product:",
 	kiosko.addProduct(
 		"producto prueba",
 		"Este es un producto prueba",
@@ -81,4 +82,4 @@ console.log(
 );
 console.log("TEST 04 - Get Products:", kiosko.getProducts());
 console.log("TEST 05 - Get Product By Id = 3:", kiosko.getProductById(3));
-console.log("TEST 06 - Get Product By Id = 1:", kiosko.getProductById(3));
+console.log("TEST 06 - Get Product By Id = 1:", kiosko.getProductById(1));
